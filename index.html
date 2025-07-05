@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Favori Dizim</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Alanı -->
+    <header class="navbar">
+      <h1>Favori Dizim</h1>
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Ana Sayfa</a>
+          <a href="#series-sections">Bölümler</a>
+          <a href="#about">Hakkında</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home">
+      <img src="./images/img3.webp" alt="Dizi Poster" />
+      <div class="about-content">
+        <h2>Game of Thrones</h2>
+        <p>
+          Yedi Krallık’ta uzun yazların ve sert kışların hüküm sürdüğü bir
+          dönemde, Kuzeyin soylusu Eddard Stark, kralın çağrısıyla saraya gider
+          ve kendini taht mücadelelerinin ortasında bulur. Tahtı ele geçirmek
+          isteyenlerin entrikaları arasında sıkışan Eddard, yaklaşan
+          tehlikelerin farkında değildir. Bu sırada, sürgündeki Targaryen
+          kardeşler de iktidar hayalleri kurmaktadır. Kış yaklaşmakta ve büyük
+          bir savaş kapıdadır.
+        </p>
+
+        <div class="series-info">
+          <p>Tür: Fantastik, Dram</p>
+          <p>Yayın Tarihi: 17 Nisan 2011</p>
+          <p>Yönetmen: David Benioff, D.B. Weiss</p>
+          <p>Oyuncular: Emilia Clarke, Kit Harington, Peter Dinklage</p>
+          <div class="series-links">
+            <a class="play-button">
+              <i class="fas fa-play-circle"></i>
+              <span>Thriller İzle</span>
+            </a>
+            <a
+              href="https://www.imdb.com/title/tt0944947/"
+              target="_blank"
+              class="imdb-link"
+            >
+              <i class="fa-brands fa-imdb"></i>
+              <span>IMDB</span>
+            </a>
+            <a
+              href="https://www.hbo.com/game-of-thrones"
+              target="_blank"
+              class="hbo-link"
+            >
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Sayfaya Git</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series-sections">
+      <h2>Dizi Bölümleri</h2>
+    </section>
+
+    <section id="about">
+      <h2>Hekkamımda</h2>
+    </section>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
