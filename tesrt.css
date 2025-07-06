@@ -92,8 +92,8 @@ h4 {
   border-bottom: 1px solid var(--clr-grey-5);
 }
 
-.navbar .navbar-head p {
-  font-size: 2rem;
+.navbar h1 {
+  font-size: 1.2rem;
 }
 
 .nav-links {
@@ -130,34 +130,32 @@ h4 {
 
 #home {
   padding: 2rem 4rem;
-  /* İçerik için yeterli alan */
+  /* position: relative; */
 }
 
-#home .home-content {
+.home-field {
   position: relative;
-  min-height: 400px;
 }
 
-#home .home-content img {
+.home-field img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-#home .home-content .series-content {
+.home-field .about-content {
   position: absolute;
-  bottom: 10%;
+  top: 50%;
   max-width: var(--view-width);
-  height: auto;
 
   /* border: 1px solid var(--clr-grey-10); */
 }
 
-.series-content h1 {
+.about-content h1 {
   color: var(--clr-white);
 }
 
-.series-content p {
+.about-content p {
   font-size: 1.2rem;
   color: var(--clr-grey-10);
   margin-top: 1rem;
@@ -201,18 +199,20 @@ h4 {
 
 /* oyuncular */
 
-.cast h2,
-.favorite-episode h2 {
+.cast {
+  /* margin-top: 2rem; */
+}
+.cast h3 {
+  font-size: 2.5rem;
   color: var(--clr-white);
   margin-bottom: 1rem;
 }
 
 .cast-section {
-  display: grid;
-  width: max-content;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
 }
 
 .cast-player {
@@ -221,13 +221,13 @@ h4 {
   border: 1px solid var(--clr-grey-15);
   background: var(--clr-grey-15);
   border-radius: var(--radius);
-  width: 300px;
+  width: 250px;
   height: 300px;
   position: relative;
 }
 
 .cast-player img {
-  width: 100%;
+  width: 180px;
   min-height: 100%;
 
   object-fit: cover;
@@ -286,13 +286,14 @@ h4 {
   padding-top: 0.875;
 }
 
-.favorite-episode {
-  margin-top: 3rem;
+.favorite-episode{
+margin-top: 2rem;
 }
+
 .episode {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 2rem;
   gap: 1rem;
   border: 1px solid var(--clr-red-dark);
@@ -312,267 +313,7 @@ h4 {
   margin-top: 0.5rem;
   line-height: 1.5rem;
 }
-
-#episode-section {
-  padding: 2rem 4rem;
-}
-
-.episode-field {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.episode-example {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border: 1px solid var(--clr-red-dark);
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow-4);
-  transition: var(--transition);
-}
-
-.episode-example img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  object-fit: cover;
-  transition: all 0.5s;
-  transform: var(--transition);
-  cursor: pointer;
-}
-.episode-example:hover img {
-  transform: scale(1.05);
-}
-
-.episode-example:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-4);
-}
-
-.episode-example .episode-info p {
-  font-size: 1rem;
-  color: var(--clr-grey-10);
-  line-height: 1.5rem;
-  padding: 0.675rem 0;
-}
-
-.episode-info a{
- padding: 0.675rem 0;
-}
-
-/* Hakkımda  */
-
-#about {
-  padding: 2rem 4rem;
-  /* background: var(--clr-grey-1); */
-}
-
-/* Hakkında Bölümü Stilleri */
-#about {
-  padding: 2rem 4rem;
-
-  color: var(--clr-white);
-}
-
-.about-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  gap: 2rem;
-}
-
-.about-text {
-  flex: 1;
-  padding: 1rem;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  color: var(--clr-red-dark);
-  margin-bottom: 1rem;
-}
-
-/* Hakkında metni ve butonlar için stiller */
-.about-text-content {
-  font-size: 1.1rem;
-  color: var(--clr-grey-10);
-  line-height: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.toggle-btn {
-  background: var(--clr-black);
-  border: 1px solid var(--clr-white);
-  color: var(--clr-white);
-  
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-top: 0.5rem;
-}
-
-.toggle-btn:hover {
-  border-color: var(--clr-red-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
-}
-
-/* Responsive Tasarım */
-@media (max-width: 768px) {
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  color: var(--clr-grey-10);
-  line-height: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.skills-section {
-  flex: 1;
-  padding: 1rem;
-}
-
-.skills-section h3 {
-  font-size: 2rem;
-  color: var(--clr-red-dark);
-  margin-bottom: 1rem;
-}
-
-.skills-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.skill-icon {
-  font-size: 2.5rem;
-  color: var(--clr-grey-10);
-  transition: var(--transition);
-}
-
-.skill-icon:hover {
-  color: var(--clr-primary);
-  transform: translateY(-4px);
-}
-
-.skills-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1rem;
-}
-
-.skill-image {
-  width: 100%;
-  height: 80px;
-  object-fit: contain;
-  border-radius: var(--radius);
-  transition: var(--transition);
-  box-shadow: var(--shadow-2);
-}
-
-.skill-image:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-3);
-}
-
-.site-footer {
-  padding: 1rem 2rem;
-  text-align: center;
-  border-top: 1px solid var(--clr-grey-5);
-}
-
-.footer-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.footer-content p {
-  color: var(--clr-grey-10);
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-content a {
-  color: var(--clr-red-dark);
-  text-decoration: none;
-  transition: var(--transition);
-  font-size: 1rem;
-}
-
-.footer-content a:hover {
-  color: var(--clr-grey-10);
-  text-decoration: underline;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0.5rem 0;
-}
-
-.social-icon i {
-  font-size: 1.5rem;
-  color: var(--clr-grey-10);
-  transition: var(--transition);
-}
-
-.social-icon:hover i {
-  color: var(--clr-red-dark);
-  transform: translateY(-2px);
-}
-
-.skill {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Responsive tasarım */
-
-/* tablet ekranlar için */
-
-@media (max-width: 1024px) {
-  .episode-field {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .cast {
-    margin-top: 3rem;
-  }
-  .cast-section {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-  #home .home-content .series-content {
-    padding: 2rem;
-    position: static;
-    min-height: 350px;
-  }
-  .cast-player {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-  }
-  .cast-player img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Mobil ekranlar için */
+/* media query */
 
 @media (max-width: 768px) {
   /* Navbar için düzeltmeler */
@@ -602,39 +343,24 @@ h4 {
   .hamburger {
     display: flex;
   }
-  #home {
-    padding: 1rem 2rem;
-    min-height: auto; /* Küçük ekranlarda sabit yükseklik kaldırıldı */
-  }
+
   /* #home bölümü  */
-  #home .home-content .series-content {
+  .home-field .about-content {
     position: static;
-    top: 0;
     padding: 1rem 0;
-  }
-  #home .home-content .series-content h2 {
-    font-size: 2rem;
     text-align: center;
+    width: 100%;
   }
 
-  .series-content p {
+  .about-content p {
     width: 100%;
     font-size: 1rem;
     line-height: 1.6rem;
   }
 
-  .play-button span,
-  .imdb-link span,
-  .hbo-link span {
-    display: none;
-  }
-
   /* cast kartları*/
-
   .cast-section {
     justify-content: center;
-    grid-template-columns: 1fr;
-    width: 100%;
   }
 
   .cast-player {
@@ -647,72 +373,15 @@ h4 {
     width: 100%;
     height: auto;
   }
+  
+  .ma
 
   /* bölüm videoları */
   .episode {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
   .episode iframe {
     height: 250px;
-  }
-  #episode-section {
-    padding: 1rem 2rem;
-  }
-  #episode-section h2 {
-    font-size: 2rem;
-  }
-  .episode-field {
-    grid-template-columns: 1fr;
-    /* gap: 1rem; */
-  }
-  #about {
-    padding: 1rem;
-  }
-
-  .about-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  .about-text-content {
-    font-size: 1rem;
-    line-height: 1.6rem;
-  }
-  .about-text p {
-    font-size: 1rem;
-    line-height: 1.6rem;
-  }
-  .toggle-btn {
-    font-size: 0.875rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .skills-section h3 {
-    font-size: 1.5rem;
-  }
-
-  .skill-icon {
-    font-size: 2rem;
-  }
-
-  .skill-image {
-    height: 60px;
-  }
-  .site-footer {
-    padding: 1rem;
-  }
-
-  .footer-content p {
-    font-size: 0.75rem;
-  }
-
-  .social-icon i {
-    font-size: 1.2rem;
   }
 }

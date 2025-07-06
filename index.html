@@ -16,7 +16,7 @@
   <body>
     <!-- Header Alanı -->
     <header class="navbar">
-      <h1>Favori Dizim</h1>
+      <div class="navbar-head"><p>Favori Dizim</p></div>
       <nav>
         <div class="hamburger" onclick="toggleMenu()">
           <span></span>
@@ -25,61 +25,66 @@
         </div>
         <div class="nav-links" id="navLinks">
           <a href="#home">Ana Sayfa</a>
-          <a href="#series-sections">Bölümler</a>
+          <a href="#episode-section">Bölümler</a>
           <a href="#about">Hakkında</a>
         </div>
       </nav>
     </header>
 
     <section id="home">
-      <img src="./images/img3.webp" alt="Dizi Poster" />
-      <div class="about-content">
-        <!-- Dizi Başlık ve İçerik Alanı -->
-        <h2>Game of Thrones</h2>
-        <p>
-          Yedi Krallık’ta uzun yazların ve sert kışların hüküm sürdüğü bir
-          dönemde, Kuzeyin soylusu Eddard Stark, kralın çağrısıyla saraya gider
-          ve kendini taht mücadelelerinin ortasında bulur. Tahtı ele geçirmek
-          isteyenlerin entrikaları arasında sıkışan Eddard, yaklaşan
-          tehlikelerin farkında değildir. Bu sırada, sürgündeki Targaryen
-          kardeşler de iktidar hayalleri kurmaktadır. Kış yaklaşmakta ve büyük
-          bir savaş kapıdadır.
-        </p>
+      <div class="home-content">
+        <img src="./images/img3.webp" alt="Dizi Poster" />
+        <div class="series-content">
+          <!-- Dizi Başlık ve İçerik Alanı -->
+          <h1>Game of Thrones</h1>
+          <p>
+            Yedi Krallık’ta uzun yazların ve sert kışların hüküm sürdüğü bir
+            dönemde, Kuzeyin soylusu Eddard Stark, kralın çağrısıyla saraya
+            gider ve kendini taht mücadelelerinin ortasında bulur. Tahtı ele
+            geçirmek isteyenlerin entrikaları arasında sıkışan Eddard, yaklaşan
+            tehlikelerin farkında değildir. Bu sırada, sürgündeki Targaryen
+            kardeşler de iktidar hayalleri kurmaktadır. Kış yaklaşmakta ve büyük
+            bir savaş kapıdadır.
+          </p>
 
-        <div class="series-info">
-          <p>Tür: Fantastik, Dram</p>
-          <p>Yayın Tarihi: 17 Nisan 2011</p>
-          <p>Yönetmen: David Benioff, D.B. Weiss</p>
-          <p>Oyuncular: Emilia Clarke, Kit Harington, Peter Dinklage</p>
+          <div class="series-info">
+            <p>Tür: Fantastik, Dram</p>
+            <p>Yayın Tarihi: 17 Nisan 2011</p>
+            <p>Yönetmen: David Benioff, D.B. Weiss</p>
+            <p>Oyuncular: Emilia Clarke, Kit Harington, Peter Dinklage</p>
 
-          <!-- Dizi Linkleri -->
-          <div class="series-links">
-            <a class="play-button">
-              <i class="fas fa-play-circle"></i>
-              <span>Thriller İzle</span>
-            </a>
-            <a
-              href="https://www.imdb.com/title/tt0944947/"
-              target="_blank"
-              class="imdb-link"
-            >
-              <i class="fa-brands fa-imdb"></i>
-              <span>IMDB</span>
-            </a>
-            <a
-              href="https://www.hbo.com/game-of-thrones"
-              target="_blank"
-              class="hbo-link"
-            >
-              <i class="fa-solid fa-circle-info"></i>
-              <span>Sayfaya Git</span>
-            </a>
+            <!-- Dizi Linkleri -->
+            <div class="series-links">
+              <a class="play-button" title="Oynat">
+                <i class="fas fa-play-circle"></i>
+                <span>Thriller İzle</span>
+              </a>
+              <a
+                href="https://www.imdb.com/title/tt0944947/"
+                target="_blank"
+                class="imdb-link"
+                title="IMDB Sayfası"
+              >
+                <i class="fa-brands fa-imdb"></i>
+                <span>IMDB</span>
+              </a>
+              <a
+                href="https://www.hbo.com/game-of-thrones"
+                target="_blank"
+                class="hbo-link"
+                title="HBO Sayfası"
+              >
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Sayfaya Git</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
       <!-- Dizi Oyuncuları -->
       <div class="cast">
-        <h3>Oyuncular</h3>
+        <h2>Oyuncular</h2>
 
         <div class="cast-section">
           <div class="cast-player">
@@ -118,47 +123,281 @@
           </div>
         </div>
       </div>
-      <div class="episode">
-        <iframe
-          src="https://www.youtube.com/embed/QkuBseujqj0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+      <!-- favori Bölümm -->
+      <div class="favorite-episode">
+        <h2>Favori Bölümüm</h2>
+        <div class="episode">
+          <iframe
+            src="https://www.youtube.com/embed/QkuBseujqj0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
 
-        <div class="episode-info">
-          <h4>Game of Thrones Sezon 5, Bölüm 10 – “Mother’s Mercy”</h4>
-    
-          <p>
-            Jon Snow, Hardhome savaşında vahşilerle birlikte döner. Onlara karşı
-            merhametli davranır; onları kurtarır ve Sur'dan içeri alır. Bu
-            karar, Gece Nöbetçileri'nin birçok üyesini öfkelendirir. Özellikle
-            bazı nöbetçiler, Jon’un "vatan haini" olduğunu düşünür. Onlara göre
-            Jon, “vahşi dostu” olmuştu ve bu Gece Nöbeti yemini ihlal ediyordu.
-            Gece vakti Jon, Kara Kale'de dışarı çağrılır. Nöbetçilerden biri
-            panik içinde gelir ve: “Lord Commander! Bir haber var. Amcanız
-            Benjen Stark hayatta!” der. Jon şaşırır, umutlanır ve hemen dışarı
-            çıkar. Avluya geldiğinde yerde “TRAITOR” (Hain) yazan bir tabela
-            görür. Ardından etrafını nöbetçiler sarar.
-          </p>
+          <div class="episode-info">
+            <h4>Game of Thrones Sezon 5, Bölüm 10 – “Mother’s Mercy”</h4>
+
+            <p>
+              Jon Snow, Hardhome savaşında vahşilerle birlikte döner. Onlara
+              karşı merhametli davranır; onları kurtarır ve Sur'dan içeri alır.
+              Bu karar, Gece Nöbetçileri'nin birçok üyesini öfkelendirir.
+              Özellikle bazı nöbetçiler, Jon’un "vatan haini" olduğunu düşünür.
+              Onlara göre Jon, “vahşi dostu” olmuştu ve bu Gece Nöbeti yemini
+              ihlal ediyordu. Gece vakti Jon, Kara Kale'de dışarı çağrılır.
+              Nöbetçilerden biri panik içinde gelir ve: “Lord Commander! Bir
+              haber var. Amcanız Benjen Stark hayatta!” der. Jon şaşırır,
+              umutlanır ve hemen dışarı çıkar. Avluya geldiğinde yerde “TRAITOR”
+              (Hain) yazan bir tabela görür. Ardından etrafını nöbetçiler sarar.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="series-sections">
-      <h2>Dizi Bölümleri</h2>
-    </section>
 
+
+<!-- Bölümler (6 bölüm) -->
+    <section id="episode-section">
+      <h2>Bölümler</h2>
+      <div class="episode-field">
+        <div class="episode-example">
+          <img src="./images/blackwater.jpeg" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Kara Su (Black Water)</h3>
+            <p>
+              Stannis Baratheon filosuyla King's Landing’e saldırır. Tyrion,
+              Wildfire kullanarak donanmayı yok eder ve şehrin savunmasında
+              kahraman olur. Cersei, düşmanın zafer kazanması ihtimaline karşı
+              oğluyla birlikte intihar etmeyi düşünür.
+            </p>
+
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=iLbU6rLfA5I"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>2.sezon 9.bölüm</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="episode-example">
+          <img src="./images/war.webp" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Piçlerin Savaşı (Battle of the Bastards)</h3>
+            <p>
+              Jon Snow ve Ramsay Bolton arasında geçen epik savaşta,
+              Winterfell’in kaderi belirlenir. Savaş alanında kaos hakimdir ve
+              Jon neredeyse ezilir. Sansa, savaşı çevirecek hamleyi yapar ve
+              Starklar Kuzey’i geri alır.
+            </p>
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=LS9F9GKlphs"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>6.sezon 9.bölüm</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="episode-example">
+          <img src="./images/castamare.jpeg" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Castamere Yağmurları (The Rains of Castamere)</h3>
+            <p>
+              Robb Stark ve annesi Catelyn, Walder Frey’in kalesinde gerçekleşen
+              düğüne katılır. Ancak Freyler ve Boltonlar ihanete hazırlanmıştır.
+              Düğün sırasında Stark ailesine kanlı bir saldırı düzenlenir ve
+              Kızıl Düğün olarak tarihe geçer.
+            </p>
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=QLYT8uI7X84"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>3.sezon 9.bölüm</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="episode-example">
+          <img src="./images/children.jpeg" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Çocuklar (The Children)</h3>
+            <p>
+              Tyrion, zindandan kaçarak babasını öldürür ve şehri terk eder.
+              Arya, Braavos’a doğru yola çıkar. Bran, kuzeydeki yolculuğunun
+              sonunda Üç Gözlü Kuzgun ile karşılaşır ve büyülü dünyanın
+              derinliklerine adım atar.
+            </p>
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=bvg01QSqwIE"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>4.sezon 10.bölüm</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="episode-example">
+          <img src="./images/hardhome.jpeg" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Zorlu Yuva (Hardhome)</h3>
+            <p>
+              Jon Snow, Vahşilerle anlaşmak üzere Hardhome’a gider ancak
+              beklenmedik bir Ak Gezen saldırısıyla karşılaşır. Hayatta kalanlar
+              panikle kaçar. Night King, ölenleri dirilterek Jon’a gerçek
+              tehdidin büyüklüğünü gösterir.
+            </p>
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=Nzcr6ELqv3I"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>5.sezon 8.bölüm</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="episode-example">
+          <img src="./images/longnignt.jpeg" class="episode-img" />
+
+          <div class="episode-info">
+            <h3>Uzun gece (The Long Night)</h3>
+            <p>
+              Ak Gezenler Winterfell’e saldırır ve tüm Westeros’un kaderi
+              belirlenir. Savaş gecesi boyunca süren çatışmalar büyük kayıplara
+              yol açar. Arya Stark, gecenin en beklenmedik anında Night King’i
+              öldürerek savaşı sona erdirir.
+            </p>
+            <a
+              class="play-button"
+              title="Oynat"
+              href="https://www.youtube.com/watch?v=hurRwmpYBbQ"
+            >
+              <i class="fas fa-play-circle"></i>
+              <span>8.sezon 3.bölüm</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Hakkında Alanı -->
     <section id="about">
-      <h2>Hekkamımda</h2>
-    </section>
+      <div class="about-container">
+        <!-- Sol Taraf: Tanıtım -->
+        <div class="about-text">
+          <h2>Hakkımda</h2>
+          <p>
+            Ben, Uluslararası Ticaret ve Lojistik geçmişine sahip tutkulu bir
+            Frontend geliştiricisiyim. Son yıllarda teknoloji sektörüne geçiş
+            yaparak, React, React Native, Next.js ve TypeScript gibi modern
+            teknolojilerle duyarlı, ölçeklenebilir ve kullanıcı dostu
+            uygulamalar geliştirdim.
+          </p>
+          <p id="about-full-text" class="about-text-content">
+            Temiz ve verimli kullanıcı arayüzleri oluşturmaktan, API
+            entegrasyonları gerçekleştirmekten ve hem web hem de mobil
+            platformlar için yüksek performanslı uygulamalar sunmaktan keyif
+            alıyorum. Gerçek dünya problemlerini teknolojiyle çözmeyi seviyor,
+            frontend alanındaki en son trendleri takip ederek yeteneklerimi
+            sürekli geliştiriyorum. Geliştirdiğim projeler arasında; Google Maps
+            API kullanan, yakındaki işletmeleri keşfetmeye yönelik bir mobil
+            uygulama, OCR ve OpenAI destekli bir tarif uygulaması ve toplu
+            demiryolu hizmetleri için bilet takip sistemi yer alıyor.
+          </p>
+          <span id="about-short-text" class="about-text-content"></span>
+          <button id="show-more-btn" class="toggle-btn">Daha Fazla Gör</button>
+          <button id="show-less-btn" class="toggle-btn" style="display: none">
+            Daha Az Gör
+          </button>
+        </div>
+        <!-- Sağ Taraf: Beceriler -->
+        <div class="skills-section">
+          <h3>Becerilerim</h3>
+          <div class="skills-icons">
+            <div class="skill">
+              <i class="fab fa-react skill-icon" title="React"></i>
+              <p>React</p>
+            </div>
 
-    <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        navLinks.classList.toggle("active");
-      }
-    </script>
+            <div class="skill">
+              <i class="fab fa-js skill-icon" title="JavaScript"></i>
+              <p>JavaScript</p>
+            </div>
+            <div class="skill">
+              <i class="fab fa-node-js skill-icon" title="Node.js"></i>
+              <p>Node.js</p>
+            </div>
+
+            <div class="skill">
+              <i class="fab fa-vuejs skill-icon" title="Vue.js"></i>
+              <p>Vue.Js</p>
+            </div>
+            <div class="skill">
+              <i class="fab fa-android skill-icon" title="Kotlin"></i>
+              <p>Kotlin</p>
+            </div>
+            <div class="skill">
+              <i class="fab fa-html5 skill-icon" title="HTML5"></i>
+              <p>HTML5</p>
+            </div>
+            <div class="skill">
+              <i class="fab fa-css skill-icon" title="Node.js"></i>
+              <p>Css</p>
+            </div>
+            <div class="skill">
+              <i class="fab fa-github skill-icon" title="GitHub"></i>
+              <p>Github</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer Alanı -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>
+          Tasarımcı Portföyü
+          <a href="https://tasarimci-portfoy.com" target="_blank">Musa Sayar</a>
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/musasayar/"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/musayar9"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://medium.com/@musasayar67"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-medium"></i
+          ></a>
+        </div>
+        <p>&copy; 2025 Favori Dizi. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
