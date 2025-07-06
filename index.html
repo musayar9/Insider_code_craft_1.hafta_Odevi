@@ -10,13 +10,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Favori Dizim</title>
+    <title>Favori Dizi</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Header Alanı -->
     <header class="navbar">
-      <div class="navbar-head"><p>Favori Dizim</p></div>
+      <div class="navbar-head"><p>Favori <span>Dizi</span> </p></div>
       <nav>
         <div class="hamburger" onclick="toggleMenu()">
           <span></span>
@@ -24,13 +24,13 @@
           <span></span>
         </div>
         <div class="nav-links" id="navLinks">
-          <a href="#home">Ana Sayfa</a>
-          <a href="#episode-section">Bölümler</a>
-          <a href="#about">Hakkında</a>
+          <a href="#home" class="nav-link">Ana Sayfa</a>
+          <a href="#episode-section" class="nav-link">Bölümler</a>
+          <a href="#about" class="nav-link">Hakkında</a>
         </div>
       </nav>
     </header>
-
+    <!-- Dizi, Resim Başlık ve İçerik Alanı -->
     <section id="home">
       <div class="home-content">
         <img src="./images/img3.webp" alt="Dizi Poster" />
@@ -46,7 +46,7 @@
             kardeşler de iktidar hayalleri kurmaktadır. Kış yaklaşmakta ve büyük
             bir savaş kapıdadır.
           </p>
-
+          <!-- Dizi bilgileri -->
           <div class="series-info">
             <p>Tür: Fantastik, Dram</p>
             <p>Yayın Tarihi: 17 Nisan 2011</p>
@@ -55,9 +55,13 @@
 
             <!-- Dizi Linkleri -->
             <div class="series-links">
-              <a class="play-button" title="Oynat">
+              <a
+                class="play-button"
+                title="Oynat"
+                href="https://www.max.com/tr/tr"
+              >
                 <i class="fas fa-play-circle"></i>
-                <span>Thriller İzle</span>
+                <span>İzle</span>
               </a>
               <a
                 href="https://www.imdb.com/title/tt0944947/"
@@ -99,7 +103,7 @@
           </div>
           <div class="cast-player">
             <img src="./images/john-snow.webp" alt="daenerys" />
-            <!-- <p>Kit Harrigton</p> -->
+
             <div class="player-info">
               <p class="name">Jon Snow</p>
               <p class="description">
@@ -110,7 +114,7 @@
           </div>
           <div class="cast-player">
             <img src="./images/tyrion-lannister.jpg" alt="daenerys" />
-            <!-- <p>Peter Dinklage</p> -->
+
             <div class="player-info">
               <p class="name">Tyrion Lannister</p>
               <p class="description">
@@ -123,10 +127,11 @@
           </div>
         </div>
       </div>
-      <!-- favori Bölümm -->
+      <!-- Favori Bölümüm -->
       <div class="favorite-episode">
-        <h2>Favori Bölümüm</h2>
+        <h2>Favori Bölüm</h2>
         <div class="episode">
+          <!-- Sol Taraf: Favori Bölüm Videosu -->
           <iframe
             src="https://www.youtube.com/embed/QkuBseujqj0"
             title="YouTube video player"
@@ -134,7 +139,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-
+          <!-- Sağ Taraf:Favori Bölümü Özet -->
           <div class="episode-info">
             <h4>Game of Thrones Sezon 5, Bölüm 10 – “Mother’s Mercy”</h4>
 
@@ -149,20 +154,29 @@
               haber var. Amcanız Benjen Stark hayatta!” der. Jon şaşırır,
               umutlanır ve hemen dışarı çıkar. Avluya geldiğinde yerde “TRAITOR”
               (Hain) yazan bir tabela görür. Ardından etrafını nöbetçiler sarar.
+              İlk bıçaklayan Alliser Thorne olur. “For the Watch.” (Nöbet için.)
+              Ardından sırayla diğer nöbetçiler Jon’u bıçaklar. Son olarak Jon’a
+              en güvendiği kişi olan genç Olly yaklaşır. Olly gözlerinin içine
+              bakar, sonra o da: “For the Watch.” der ve hançeri saplar. Jon
+              yere yığılır. Gözleri açık, kar üstünde kanlar içinde ölüm
+              sessizliğine bürünür.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-
-
-<!-- Bölümler (6 bölüm) -->
+    <!-- Bölümler (6 bölüm) -->
     <section id="episode-section">
       <h2>Bölümler</h2>
       <div class="episode-field">
         <div class="episode-example">
-          <img src="./images/blackwater.jpeg" class="episode-img" />
+          <div class="episode-img-container">
+            <img src="./images/blackwater.jpeg" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
 
           <div class="episode-info">
             <h3>Kara Su (Black Water)</h3>
@@ -185,8 +199,12 @@
         </div>
 
         <div class="episode-example">
-          <img src="./images/war.webp" class="episode-img" />
-
+          <div class="episode-img-container">
+            <img src="./images/war.webp" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
           <div class="episode-info">
             <h3>Piçlerin Savaşı (Battle of the Bastards)</h3>
             <p>
@@ -207,8 +225,12 @@
         </div>
 
         <div class="episode-example">
-          <img src="./images/castamare.jpeg" class="episode-img" />
-
+         <div class="episode-img-container">
+            <img src="./images/castamare.jpeg" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
           <div class="episode-info">
             <h3>Castamere Yağmurları (The Rains of Castamere)</h3>
             <p>
@@ -229,7 +251,12 @@
         </div>
 
         <div class="episode-example">
-          <img src="./images/children.jpeg" class="episode-img" />
+          <div class="episode-img-container">
+            <img src="./images/children.jpeg" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
 
           <div class="episode-info">
             <h3>Çocuklar (The Children)</h3>
@@ -251,8 +278,12 @@
         </div>
 
         <div class="episode-example">
-          <img src="./images/hardhome.jpeg" class="episode-img" />
-
+          <div class="episode-img-container">
+            <img src="./images/hardhome.jpeg" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
           <div class="episode-info">
             <h3>Zorlu Yuva (Hardhome)</h3>
             <p>
@@ -273,8 +304,12 @@
         </div>
 
         <div class="episode-example">
-          <img src="./images/longnignt.jpeg" class="episode-img" />
-
+          <div class="episode-img-container">
+            <img src="./images/longnignt.jpeg" class="episode-img" />
+            <button onclick="addFavorite()">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
           <div class="episode-info">
             <h3>Uzun gece (The Long Night)</h3>
             <p>
@@ -295,12 +330,12 @@
         </div>
       </div>
     </section>
-<!-- Hakkında Alanı -->
+    <!-- Hakkında Alanı -->
     <section id="about">
       <div class="about-container">
         <!-- Sol Taraf: Tanıtım -->
         <div class="about-text">
-          <h2>Hakkımda</h2>
+          <h2>Hakkında</h2>
           <p>
             Ben, Uluslararası Ticaret ve Lojistik geçmişine sahip tutkulu bir
             Frontend geliştiricisiyim. Son yıllarda teknoloji sektörüne geçiş
@@ -367,7 +402,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Footer Alanı -->
     <footer class="site-footer">
       <div class="footer-content">

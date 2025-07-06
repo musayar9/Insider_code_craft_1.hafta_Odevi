@@ -1,15 +1,12 @@
 :root {
-  --clr-primary: #645cff;
-  --clr-primary-light: #a29dff;
   --clr-black: #000000;
-  --clr-grey-1: #102a42;
   --clr-grey-5: #617d98;
   --clr-grey-10: #e2e8f0;
   --clr-grey-15: #f1f5f8;
   --clr-white: #fff;
+  --clr-red-dark: rgb(188 26 69 / 1);
   --spacing: 0.25rem;
   --radius: 0.5rem;
-  --font-family: "Lato", sans-serif;
   --font-weight-4: 400;
   --font-weight-5: 500;
   --font-weight-6: 600;
@@ -19,7 +16,6 @@
   --max-width: 1120px;
   --fixed-width: 400px;
   --view-width: 90vw;
-  --clr-red-dark: rgb(188 26 69 / 1);
 
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -80,7 +76,7 @@ h4 {
   font-size: 0.875rem;
 }
 
-/* Navbar */
+/* Navbar alanı */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -88,22 +84,40 @@ h4 {
   background-color: var(--clr-black);
   padding: 2rem 3rem;
   color: white;
-  transition: all 0.2s ease;
+  transition: all 0.3s;
+  transform: var(--transition);
   border-bottom: 1px solid var(--clr-grey-5);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .navbar .navbar-head p {
   font-size: 2rem;
+  font-weight: var(--font-weight-6);
+}
+
+.navbar-head p span {
+  color: var(--clr-red-dark);
 }
 
 .nav-links {
   display: flex;
   gap: 1rem;
 }
-
+.nav-link.active {
+  color: var(--clr-red-dark);
+  font-weight: bold;
+}
 .nav-links a {
   color: white;
   text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--clr-red-dark);
+  transition: all 0.3s;
+  text-decoration: underline;
 }
 
 /* Hamburger  menu*/
@@ -122,15 +136,13 @@ h4 {
   transition: 0.4s;
 }
 
-/* Örnek bölümler */
-/* section {
-  padding: 100px 20px;
-  border-bottom: 1px solid #ccc;
-} */
-
+/* Dizi Başlık, Resim ve İçerik Alanı */
 #home {
+  min-height: 100vh;
   padding: 2rem 4rem;
-  /* İçerik için yeterli alan */
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #home .home-content {
@@ -139,18 +151,17 @@ h4 {
 }
 
 #home .home-content img {
+  margin-top: 5rem;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-
+/* Dizi içerik alanı */
 #home .home-content .series-content {
   position: absolute;
   bottom: 10%;
   max-width: var(--view-width);
   height: auto;
-
-  /* border: 1px solid var(--clr-grey-10); */
 }
 
 .series-content h1 {
@@ -164,7 +175,7 @@ h4 {
   line-height: 2rem;
   width: 80%;
 }
-
+/* Dizi linkleri, izle, imdb ve dizi sayfası */
 .series-links {
   display: flex;
   justify-content: flex-start;
@@ -199,7 +210,7 @@ h4 {
   margin-right: 0.675rem;
 }
 
-/* oyuncular */
+/*Dizi oyuncuları kart tasarımı */
 
 .cast h2,
 .favorite-episode h2 {
@@ -286,6 +297,8 @@ h4 {
   padding-top: 0.875;
 }
 
+/* Favori Bölümüm alanı tasarımı  */
+
 .favorite-episode {
   margin-top: 3rem;
 }
@@ -295,9 +308,10 @@ h4 {
   margin-top: 2rem;
   padding: 2rem;
   gap: 1rem;
+  border-radius: var(--radius);
   border: 1px solid var(--clr-red-dark);
 }
-
+/* favori bölüm video tasarımı */
 .episode iframe {
   width: 100%;
   height: 300px;
@@ -313,6 +327,7 @@ h4 {
   line-height: 1.5rem;
 }
 
+/* dizi bölümleri kart tasarımı */
 #episode-section {
   padding: 2rem 4rem;
 }
@@ -340,12 +355,50 @@ h4 {
   height: auto;
   border-radius: var(--radius);
   object-fit: cover;
+  /* overflow: hidden; */
   transition: all 0.5s;
   transform: var(--transition);
   cursor: pointer;
 }
+
+.episode-example .episode-img-container {
+  position: relative;
+  width: 100%;
+}
+
+.episode-example .episode-img-container button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--clr-white);
+  cursor: pointer;
+}
+.episode-example .episode-img-container button i {
+  font-size: 1.5rem;
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+
+.episode-img-container button:hover .fa-heart:hover {
+  color: var(--clr-red-dark);
+  transform: translateY(-2px);
+}
+/* favorilere ekleme */
+.episode-img-container button .fa-heart.active {
+  color: var(--clr-red-dark);
+}
 .episode-example:hover img {
   transform: scale(1.05);
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .episode-example:hover {
@@ -360,13 +413,14 @@ h4 {
   padding: 0.675rem 0;
 }
 
-.episode-info a{
- padding: 0.675rem 0;
+.episode-info a {
+  padding: 0.675rem 0;
 }
 
-/* Hakkımda  */
+/* Hakkında Alanı   */
 
 #about {
+  margin: 5rem 0;
   padding: 2rem 4rem;
   /* background: var(--clr-grey-1); */
 }
@@ -411,7 +465,7 @@ h4 {
   background: var(--clr-black);
   border: 1px solid var(--clr-white);
   color: var(--clr-white);
-  
+
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   font-size: 1rem;
@@ -426,10 +480,6 @@ h4 {
   box-shadow: var(--shadow-2);
 }
 
-/* Responsive Tasarım */
-@media (max-width: 768px) {
-}
-
 .about-text p {
   font-size: 1.1rem;
   color: var(--clr-grey-10);
@@ -437,11 +487,16 @@ h4 {
   margin-bottom: 1rem;
 }
 
+/* about alanı içindeki beceriler alanı tasarımı */
 .skills-section {
   flex: 1;
   padding: 1rem;
 }
-
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .skills-section h3 {
   font-size: 2rem;
   color: var(--clr-red-dark);
@@ -460,10 +515,11 @@ h4 {
   font-size: 2.5rem;
   color: var(--clr-grey-10);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .skill-icon:hover {
-  color: var(--clr-primary);
+  color: var(--clr-red-dark);
   transform: translateY(-4px);
 }
 
@@ -486,6 +542,8 @@ h4 {
   transform: scale(1.05);
   box-shadow: var(--shadow-3);
 }
+
+/* footer alanı */
 
 .site-footer {
   padding: 1rem 2rem;
@@ -534,21 +592,20 @@ h4 {
   transform: translateY(-2px);
 }
 
-.skill {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 /* Responsive tasarım */
 
 /* tablet ekranlar için */
 
 @media (max-width: 1024px) {
-  .episode-field {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  /* home alanı içinde düzeltemelr */
+  #home .home-content .series-content {
+    padding: 2rem;
+    position: static;
+    min-height: 350px;
   }
+
+  /* dizi oyuncular kart düzenlemesi */
+
   .cast {
     margin-top: 3rem;
   }
@@ -556,11 +613,7 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
-  #home .home-content .series-content {
-    padding: 2rem;
-    position: static;
-    min-height: 350px;
-  }
+
   .cast-player {
     width: 100%;
     max-width: 350px;
@@ -570,23 +623,33 @@ h4 {
     width: 100%;
     height: auto;
   }
+  /* dizi bölüm alanı için kart düzenleme */
+  .episode-field {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
 /* Mobil ekranlar için */
 
 @media (max-width: 768px) {
   /* Navbar için düzeltmeler */
+  .navbar {
+    padding: 1rem;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: var(--clr-grey-1);
+    background-color: var(--clr-black);
     position: absolute;
-    top: 100%;
+    top: 65px;
     right: 0;
     width: 100%;
     text-align: right;
     padding: 1rem;
     z-index: 10;
+    border-bottom: 1px solid var(--clr-grey-10);
   }
 
   .nav-links a {
@@ -594,27 +657,33 @@ h4 {
     display: block;
     width: 100%;
   }
+  .nav-links a:hover {
+    transform: translateX(4px);
+  }
 
   .nav-links.active {
     display: flex;
   }
-
+  /* hamburger menü düzenlemesi */
   .hamburger {
     display: flex;
   }
+  /* #home bölümü  */
   #home {
     padding: 1rem 2rem;
-    min-height: auto; /* Küçük ekranlarda sabit yükseklik kaldırıldı */
   }
-  /* #home bölümü  */
   #home .home-content .series-content {
     position: static;
-    top: 0;
+    text-align: center;
     padding: 1rem 0;
   }
-  #home .home-content .series-content h2 {
+  #home .home-content .series-content h1 {
     font-size: 2rem;
     text-align: center;
+  }
+
+  .series-links {
+    justify-content: center;
   }
 
   .series-content p {
@@ -629,12 +698,17 @@ h4 {
     display: none;
   }
 
-  /* cast kartları*/
+  /* dizi oyuncular kart düzenlemesi */
 
   .cast-section {
     justify-content: center;
     grid-template-columns: 1fr;
     width: 100%;
+  }
+
+  .cast h2,
+  .favorite-episode h2 {
+    font-size: 1.5rem;
   }
 
   .cast-player {
@@ -643,12 +717,17 @@ h4 {
     height: auto;
   }
 
+  .player-info .description {
+    font-size: 0.675rem;
+    line-height: 1rem;
+  }
+
   .cast-player img {
     width: 100%;
     height: auto;
   }
 
-  /* bölüm videoları */
+  /* favori bölüm   */
   .episode {
     grid-template-columns: 1fr;
     padding: 1rem;
@@ -663,10 +742,16 @@ h4 {
   #episode-section h2 {
     font-size: 2rem;
   }
+  /* dizi bölüm alanı için kart düzenleme */
   .episode-field {
     grid-template-columns: 1fr;
     /* gap: 1rem; */
   }
+
+  .episode-example a span {
+    display: flex;
+  }
+  /* Hakkında alanı */
   #about {
     padding: 1rem;
   }
@@ -704,6 +789,8 @@ h4 {
   .skill-image {
     height: 60px;
   }
+
+  /* footer alanı  */
   .site-footer {
     padding: 1rem;
   }
