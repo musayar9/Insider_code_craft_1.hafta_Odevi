@@ -1,4 +1,4 @@
-# Favori Dizim Web Uygulaması
+# Favori Dizi Web Uygulaması
 
 ## Demo: [Uygulama Demosu](https://favoridizi.netlify.app/)
 
