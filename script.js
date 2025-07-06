@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const showMoreBtn = document.getElementById("show-more-btn");
   const showLessBtn = document.getElementById("show-less-btn");
   const heartIcons = document.querySelectorAll(".fa-heart");
-  // İlk 200 karakteri göster
+  // İlk 200 karakteri göstermek için substring kullandım
   const fullContent = fullText.textContent;
   shortText.textContent = fullContent.substring(0, 200) + "...";
   fullText.style.display = "none"; // Tam metni gizle
